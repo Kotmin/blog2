@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<article style="margin-top: 20px;">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <h1>{{post.title}}</h1>
+            <h3> {{ post.subtitle}} </h3>
+          <div class="col-12">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-user"></i>
+                <p class="mb-0 ms-2">{{ post.author.name }}</p>
+            </div>
+            
+
+                <div class="text-end">
+                  <p class="d-inline">
+                      <i class="bi bi-clock"></i> {{ post.estimated_time_to_read }} min
+                  </p>
+                  <p class="d-inline ms-3">
+                    <i class="bi bi-calendar"></i> {{ post.date }}
+                  </p>
+              </div>
+              
+          </div>
+          
+          
+
+
+        {{ post.body | safe }}
+        {% if current_user.is_authenticated %}
+        <div class="d-flex justify-content-end mb-4">
+          <a
+            class="btn btn-primary float-right"
+            href="{{ url_for('edit_post',post_id= post.id) }}"
+            >Edit Post</a
+          >
+          <a
+          class="btn btn-primary float-right"
+          href=""
+          >Add Feature</a
+        >
+          <a
+          class="btn btn-primary float-right"
+          href="{{ url_for('delete_post',post_id= post.id) }}"
+          >Delete</a
+        >
+        
+
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".image-container img");
+
+        images.forEach(function (img) {
+            if (img.clientHeight > img.clientWidth) {
+                img.classList.add("centered-img");
+            }
+        });
+    });
+</script>
+
+<script>
+    // JavaScript to handle button functionality
+    const copyToClipboardBtn = document.querySelector('.copy-to-clipboard-btn');
+
+    copyToClipboardBtn.addEventListener('click', () => {
+        const codeToCopy = document.querySelector('.code-box code');
+        const textToCopy = codeToCopy.textContent;
+
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        // You can add a success message or other feedback here
+        // alert('Code copied to clipboard!');
+        showToast('Code copied to clipboard!', 'success');
+    });
+</script>
+
+<!-- 
+<script>
+    const toggleLineNumbersBtn = document.querySelector('.line-numbering-btn');
+    const codeBox = document.querySelector('.code-box pre');
+    let showLineNumbers = true;
+
+    toggleLineNumbersBtn.addEventListener('click', () => {
+        showLineNumbers = !showLineNumbers;
+        toggleLineNumbers();
+    });
+
+    function toggleLineNumbers() {
+        if (showLineNumbers) {
+            codeBox.classList.add('line-numbers');
+        } else {
+            codeBox.classList.remove('line-numbers');
+        }
+    }
+
+    // Display block and display none
+
+    toggleLineNumbers();
+</script> -->
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // JavaScript to toggle line numbers
+        const toggleLineNumbersBtn = document.querySelector('.line-numbering-btn');
+        toggleLineNumbersBtn.disabled = true;
+        
+        const codeBox = document.querySelector('.code-box pre');
+        const lineNumbersRows = document.querySelectorAll('.line-numbers-rows');
+        let showLineNumbers = true;
+
+        toggleLineNumbersBtn.addEventListener('click', () => {
+            showLineNumbers = !showLineNumbers;
+            toggleLineNumbers();
+        });
+
+        // Function to toggle line numbers
+        function toggleLineNumbers() {
+            if (showLineNumbers) {
+                codeBox.classList.add('line-numbers');
+                // lineNumbersRows.forEach(row => {
+                //     row.style.display = 'block';
+                // });
+                lineNumbersRows.display = 'block';
+            } else {
+                codeBox.classList.remove('line-numbers');
+                // lineNumbersRows.forEach(row => {
+                //     row.style.display = 'none';
+                // });
+                lineNumbersRows.display = 'none';
+            }
+        }
+
+        // Initial toggle to hide line numbers (you can set it to true if you want it shown by default)
+        toggleLineNumbers();
+    });
+</script>
+
+
+
+
+
+{% endblock %}

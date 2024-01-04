@@ -1,0 +1,30 @@
+<div class="programmer-container">
+    <div class="control-bar">
+        <div class="name">{{ script_name }}</div>
+        <div class="buttons">
+            <button class="line-numbering-btn disabled" title="Toggle Line Numbers">Line Numbers</button>
+            <button class="copy-to-clipboard-btn" title="Copy to Clipboard">Copy to Clipboard</button>
+        </div>
+    </div>
+    <div class="displayer">
+        <div class="left-vertical-indicator"></div>
+        <div class="code-box">
+            <!-- <div class="line-numbers"></div> -->
+
+            <!-- Your code goes here, you can use Prism.js for syntax highlighting -->
+            <pre class="code-box line-numbers code"
+    data-prismjs-copy-timeout="500"
+    lang="en"
+    data-prismjs-copy="Copy"
+    data-prismjs-copy-error="Something went wrong"
+    data-prismjs-copy-success="Copied to clipboard"
+    ><code class="language-{{ language }}">
+
+        {{ code_content }}
+    
+    
+</code></pre>
+
+        </div>
+    </div>
+</div>

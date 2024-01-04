@@ -1,0 +1,18 @@
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow specific bots
+User-agent: BadBot
+Disallow: /
+
+# General settings for all other bots
+User-agent: *
+Disallow: /private/
+Allow: /
+
+# Delay between successive requests from the same bot (in seconds)
+Crawl-delay: 10

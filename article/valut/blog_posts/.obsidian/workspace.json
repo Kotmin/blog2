@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "ea1cf011ba7df886",
+    "type": "split",
+    "children": [
+      {
+        "id": "79b1434d6742eabd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a50778186f1a37e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Note as blog post.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "487663d3ac8078f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AutoAnimation List.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1d173ea48c40d188",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semmelweiss.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "96df8841dce3bbb0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "c257ed8ad9f57fd8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "The 6 Greatest Games Ever.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d39eec62d98136a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VirusTotal.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4e8bfea54863c53e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "How to design a database.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "762fde2c4fcdccd0",
+    "type": "split",
+    "children": [
+      {
+        "id": "0da4b4d10197672f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa17ca2f6f7a9ff9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5cdae8fa00076d27",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9d78e8f76d3b6d51",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "402ec7f16145068e",
+    "type": "split",
+    "children": [
+      {
+        "id": "16407b8528565d9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83a686d83fdc3acb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "The 6 Greatest Games Ever.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7dcff11ddd5e5bff",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "The 6 Greatest Games Ever.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "359f93f724049841",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "281f764a61aa65c1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "The 6 Greatest Games Ever.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c257ed8ad9f57fd8",
+  "lastOpenFiles": [
+    "The 6 Greatest Games Ever.md",
+    "VirusTotal.md",
+    "How to design a database.md",
+    "Best games.md",
+    "Semmelweiss.md",
+    "AutoAnimation List.md",
+    "anime_api.gif",
+    "Note as blog post.md",
+    "Pasted image 20230926140926.png",
+    "Pasted image 20230926134803.png",
+    "Multivariable_Regression_and_Valuation_Model.html",
+    "note-convert.html",
+    "output_96_1.png",
+    "output_95_1.png",
+    "output_85_0.png",
+    "output_39_0.png",
+    "Dr_Semmelweis_Handwashing_Discovery.md",
+    "Pasted image 20230923210228.png"
+  ]
+}

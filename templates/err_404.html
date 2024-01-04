@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block metaheader %}
+
+<meta name="description" content="Page not found" />
+
+{% endblock %}
+
+{% block title %} Donate {% endblock %}
+
+{% block content %}
+<div class="container col-xxl-8 px-4 py-5" style="max-height: 60vw">
+    <img
+      src="{{ url_for('static', filename='res/404_steampunk_cat.webp')}}"
+      alt="Error 404 Not found with Cat and Steampunk cat"
+      class="circle-photo"
+    />
+  </div>
+{% endblock %}
