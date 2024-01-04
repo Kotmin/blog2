@@ -47,25 +47,25 @@ script_dir = Path(__file__).resolve().parent
 # Path for files to download
 # html_file_path = script_dir / "static/files/cheat_sheet.pdf"
 # if __name__ == '__main__':
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY',os.urandom(32)) # added def value pref replace to .env solution
+application = Flask(__name__)
+application.config['SECRET_KEY'] = os.environ.get('FLASK_KEY',os.urandom(32)) # added def value pref replace to .env solution
 
 ## pass for dummy acc: SQwd221eadx21 
 # l" Paul
-Bootstrap5(app)
+Bootstrap5(application)
 
 login_manager = LoginManager()
 
-login_manager.init_app(app)
+login_manager.init_app(application)
 
 
 #CKE Editor
-ckeditor = CKEditor(app)
+ckeditor = CKEditor(application)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts_renewed2.db")
+application.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts_renewed2.db")
 db = SQLAlchemy()
-db.init_app(app)
+db.init_app(application)
 
 
 
@@ -225,7 +225,7 @@ def load_user(user_id):
     return db.get_or_404(User, user_id)
 
 
-with app.app_context():
+with application.app_context():
     db.create_all()
 
 
@@ -239,7 +239,7 @@ def admin_only(f):
     return decorated_function
 
 
-@app.route('/')
+@application.route('/')
 def home():
     current_year = datetime.now().year
     posts = []
@@ -252,11 +252,11 @@ def home():
 
 
 
-@app.route('/robots.txt')
+@application.route('/robots.txt')
 def serve_robots_txt():
-    return send_from_directory(app.static_folder, request.path[1:])
+    return send_from_directory(application.static_folder, request.path[1:])
 
-@app.route('/category/<category>',methods = ['GET','POST'])
+@application.route('/category/<category>',methods = ['GET','POST'])
 @admin_only
 def add_category(category:str):
     new_category = Category(
@@ -273,7 +273,7 @@ def add_category(category:str):
 
 
 # TODO: Use Werkzeug to hash the user's password when creating a new user.
-@app.route('/register',methods = ['GET','POST'])
+@application.route('/register',methods = ['GET','POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -306,7 +306,7 @@ def register():
 
 
 # TODO: Retrieve a user from the database based on their email. 
-@app.route('/login',methods=['GET', 'POST'])
+@application.route('/login',methods=['GET', 'POST'])
 def login():
     form=LoginForm()
     
@@ -335,14 +335,14 @@ def login():
     return render_template("login.html",form=form)
 
 
-@app.route('/logout')
+@application.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('home'))
 
 
-@app.route('/new-post',methods=["GET","POST"])
+@application.route('/new-post',methods=["GET","POST"])
 @admin_only
 def add_new_post():
     form = PostForm()
@@ -367,12 +367,12 @@ def add_new_post():
     return render_template("make-post.html",form=form, default_mode='source')
 
 
-@app.route('/<int:post_id>')
+@application.route('/<int:post_id>')
 def show_post(post_id:int):
     requested_post = db.get_or_404(BlogPost, post_id)
     return render_template("post.html", post=requested_post)
 
-@app.route("/edit-post/<post_id>",methods = ['GET','POST'])
+@application.route("/edit-post/<post_id>",methods = ['GET','POST'])
 @admin_only
 def edit_post(post_id):
     requested_post = db.get_or_404(BlogPost, post_id)
@@ -439,7 +439,7 @@ def edit_post(post_id):
 
 
 
-@app.route('/delete/<post_id>')
+@application.route('/delete/<post_id>')
 @admin_only
 def delete_post(post_id):
     post_to_delete = db.get_or_404(BlogPost, post_id)
@@ -451,13 +451,13 @@ def delete_post(post_id):
 
 from flask import request,jsonify
 
-@app.route('/donate')
+@application.route('/donate')
 def donate_site():
     current_year = datetime.now().year
     pp_app_id = "ASEqoEQAojwZY0_oCFj6v9FJ_IltbwW_OwmXFNAvq_CtyykxI490PiiWXJpCSA-utBXazxJeqvsO-eQ7"
     return render_template("donate.html",curr_year = current_year,pay_pal_clientID=pp_app_id)
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def err_not_found(e):
     return render_template('err_404.html')
 
@@ -525,7 +525,7 @@ def get_access_token():
 
 
 
-@app.route('/my-server/create-paypal-order', methods=['POST'])
+@application.route('/my-server/create-paypal-order', methods=['POST'])
 def create_paypal_order():
 
 
@@ -595,7 +595,7 @@ def create_paypal_order():
             'request_id':pp_request_id,
             }
 
-@app.route('/my-server/capture-paypal-order', methods=['POST'])
+@application.route('/my-server/capture-paypal-order', methods=['POST'])
 def capture_paypal_order():
     data = request.get_json()
     order_id = data['orderID'] # probably .get would be better
@@ -649,7 +649,7 @@ if __name__ == '__main__':
 
     options, _ = parser.parse_args()
 
-    app.run(
+    application.run(
         debug=options.debug,
         host=options.host,
         port=int(options.port)

@@ -1,10 +1,10 @@
 import json
 import pytest
-from helloworld.application import app
+from helloworld.application import application
 
 @pytest.fixture
 def client():
-    return app.test_client()
+    return application.test_client()
 
 def test_response(client):
     result = client.get()
