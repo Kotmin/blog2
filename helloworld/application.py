@@ -632,7 +632,7 @@ def capture_paypal_order():
 
 
 if __name__ == '__main__':
-    default_port = "5000"
+    default_port = "80"
     default_host = "0.0.0.0"
     parser = optparse.OptionParser()
     parser.add_option("-H", "--host",
