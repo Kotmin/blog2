@@ -1,7 +1,7 @@
 #!flask/bin/python
 import json
 from flask import Flask, Response
-# import optparse
+import optparse
 
 
 from flask import Flask, render_template, abort, url_for, redirect, flash,send_from_directory
@@ -649,7 +649,7 @@ if __name__ == '__main__':
 
     options, _ = parser.parse_args()
 
-    application.run(
+    app.run(
         debug=options.debug,
         host=options.host,
         port=int(options.port)
