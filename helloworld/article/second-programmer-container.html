@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Code Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css">
+
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+    />
+
+    <style>
+        .programmer-container {
+            display: flex;
+        }
+
+        .top-control-bar {
+            background-color: #c0c0c0;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+        }
+
+        .script-name {
+            margin-right: 16px;
+        }
+
+        .code-container {
+            display: flex;
+        }
+
+        .left-vertical-indicator-bar {
+            background-color: #ffaa00;
+            width: 10px;
+        }
+
+        .line-numbers {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 8px;
+        }
+
+        .line-number {
+            font-size: 14px;
+            margin: 2px;
+        }
+
+        .code-box {
+            background-color: #0f0f0f;
+            flex-grow: 1;
+        }
+
+        /* Additional CSS for code styling */
+    </style>
+</head>
+<body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
+
+    <div class="programmer-container">
+        <!-- <div class="top-control-bar">
+            <div class="script-name">[Optional] Script Name</div>
+            <button class="line-numbering-btn" title="Toggle Line Numbers">
+                
+            </button>
+            <button class="copy-to-clipboard-btn" title="Copy to Clipboard">
+                
+            </button>
+        </div> -->
+        <div class="left-vertical-indicator-bar"></div>
+        <!-- <div class="line-numbers">
+            
+        </div> -->
+        <div class="code-box">
+            <pre>
+                <code class="language-python">
+                    
+# Author: Kotmin
+
+# There is sort of hierarchy:
+
+# If you run it as a script and parse arguments, it will translate THE USED ARGUMENTS
+# If you haven't parsed arguments, it will try to convert the 'text_to_convert' var
+# Otherwise, it will attempt to get user input.
+
+# I found some info that between letters there should be three space units,
+# and between words, there should be seven. I followed that rule.
+import sys
+
+DASH = '■'
+DOT = '•'
+
+text_to_convert = ""
+
+MORSE_CODE = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..',
+
+    '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', 
+    '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----',
+
+    ' ': ' ',
+}
+
+
+
+
+def get_user_input()-> str:
+    try:
+        user_input = input("Type sentence to encipher to International Morse Code ")
+        if user_input.strip():
+            if is_valid_morse_code(user_input):
+                return str(user_input)
+            else:
+                raise ValueError("Input contains characters not convertible to Morse Code.")
+        else:
+            raise ValueError("Input is an empty string.")
+    except ValueError as e:
+        print(f"Error: {e}")
+
+                </code>
+            </pre>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script>
+        // JavaScript to handle button functionality
+        const lineNumberingBtn = document.querySelector('.line-numbering-btn');
+        const lineNumbers = document.querySelector('.line-numbers');
+        lineNumberingBtn.addEventListener('click', () => {
+            lineNumbers.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
