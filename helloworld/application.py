@@ -46,8 +46,8 @@ script_dir = Path(__file__).resolve().parent
 
 # Path for files to download
 # html_file_path = script_dir / "static/files/cheat_sheet.pdf"
-
-app = Flask(__name__)
+if __name__ == '__main__':
+    app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY',os.urandom(32)) # added def value pref replace to .env solution
 
 ## pass for dummy acc: SQwd221eadx21 
