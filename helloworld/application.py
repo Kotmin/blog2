@@ -1,7 +1,7 @@
 #!flask/bin/python
 import json
 from flask import Flask, Response
-import optparse
+# import optparse
 
 
 from flask import Flask, render_template, abort, url_for, redirect, flash,send_from_directory
