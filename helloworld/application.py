@@ -44,6 +44,8 @@ from wtforms import PasswordField
 # Get the path of the directory containing the current script
 script_dir = Path(__file__).resolve().parent
 
+port = int(os.environ.get("PORT", 5000))
+
 # Path for files to download
 # html_file_path = script_dir / "static/files/cheat_sheet.pdf"
 # if __name__ == '__main__':
@@ -653,4 +655,5 @@ if __name__ == '__main__':
         debug=False,
         host=options.host,
         # port=int(options.port)
+        port=port
     )
